@@ -38,7 +38,7 @@ ul {
   margin: 0;
 }
 
-.link {
+a {
   text-decoration: none;
 }
 
@@ -118,6 +118,8 @@ ul {
 }
 
 .nav-link {
+  display: flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
   font-weight: 500;
@@ -135,8 +137,8 @@ ul {
 }
 
 .tel-icon {
-  width: 16px;
-  height: 12px;
+  width: 10px;
+  height: 16px;
   fill: currentColor;
   margin-right: 10px;
 }
@@ -157,6 +159,7 @@ ul {
 
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 
   background-color: #c4c4c4;
   text-align: center;
@@ -409,8 +412,9 @@ img {
 .team-social-icon {
   fill: #afb1b8;
 }
-.team-social-icon:hover,
-.team-social-icon:focus {
+
+.team-social-link:hover .team-social-icon,
+.team-social-link:focus .team-social-icon {
   fill: var(--primary-white-color);
 }
 
@@ -433,26 +437,12 @@ img {
   display: flex;
 }
 
-.customers-thumb {
+.customers-item {
   justify-content: center;
   align-items: center;
 
   width: 170px;
   height: 92px;
-
-  border: 1px solid #afb1b8;
-  box-sizing: border-box;
-  border-radius: 4px;
-}
-
-.customers-thumb:hover,
-.customers-thumb:focus {
-  border: 1px solid var(--accent-color);
-}
-
-.customers-thumb:hover .customers-icon,
-.customers-thumb:focus .customers-icon {
-  fill: var(--accent-color);
 }
 
 .customers-list .customers-item + .customers-item {
@@ -467,15 +457,29 @@ img {
   display: flex;
   width: 100%;
   height: 100%;
+
   align-items: center;
   justify-content: center;
+  border: 1px solid #afb1b8;
+
+  border-radius: 4px;
+}
+
+.customers-link:hover,
+.customers-link:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.customers-link:hover .customers-icon,
+.customers-link:focus .customers-icon {
+  fill: var(--accent-color);
 }
 
 /***** footer *****/
 
 .footer-container {
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 .address-link {
@@ -557,9 +561,6 @@ img {
 
 .join-container {
   display: block;
-  margin-top: 12px;
-  margin-bottom: 40px;
-
   justify-content: center;
   align-items: center;
   margin-left: 70px;
@@ -601,13 +602,13 @@ img {
   border-radius: 50%;
 }
 
+.join-icon {
+  fill: var(--primary-white-color);
+}
+
 .join-link:hover,
 .join-link:focus {
   background-color: var(--accent-color);
-}
-
-.join-icon {
-  fill: var(--primary-white-color);
 }
 
 /* Подключения для Портфолио */
@@ -663,8 +664,12 @@ img {
   cursor: pointer;
 }
 
-.portfolio-item:hover,
-.portfolio-item:focus {
+.portfolio-link {
+  display: block;
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
